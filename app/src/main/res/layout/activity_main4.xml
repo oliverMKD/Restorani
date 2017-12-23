@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.oliver.restorani.Main4Activity">
+
+    <EditText
+    android:id="@+id/editLink"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="link"/>
+
+    <EditText
+        android:id="@+id/editCena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editLink"
+        android:hint="cena"/>
+    <EditText
+        android:id="@+id/editIme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editCena"
+        android:hint="naziv"/>
+
+    <EditText
+        android:id="@+id/editVeg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editIme"
+        android:hint="veg"/>
+    <Button
+        android:id="@+id/kopceZacuvaj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:hint="save"/>
+</RelativeLayout>
