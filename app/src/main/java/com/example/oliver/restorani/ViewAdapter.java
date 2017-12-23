@@ -28,7 +28,8 @@ public class ViewAdapter extends FragmentPagerAdapter {
         Bundle args = new Bundle();
 
         args.putString("imageUrl", menu.get(position).getLink());
-        
+        args.putString("ime",menu.get(position).getFoodname());
+        args.putString("cena", menu.get(position).getPrice());
         Fragment1 fragment = new Fragment1();
 
         fragment.setArguments(args);
