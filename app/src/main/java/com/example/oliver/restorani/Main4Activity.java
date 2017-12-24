@@ -24,18 +24,24 @@ public class Main4Activity extends AppCompatActivity {
     Button kopceZacuvaj;
 
     private MenuModel menuModel;
+    RestoraniModel restorani;
+    int pozicija=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         ButterKnife.bind(this);
+        pozicija = getIntent().getIntExtra("pozicija",0);
+        restorani = PreferencesManager.getRestaurants(this);
     }
 
     @OnClick(R.id.kopceZacuvaj)
     public void saveDetails(){
         Meni meni = new Meni(cena.getText().toString(),ime.getText().toString());
-        Intent intent = new Intent();
+        restorani.restaurants.get(pozicija).menu.add(meni);
+        PreferencesManager.addRestaurants(restorani,this);
+        Intent intent = new Intent(this,Main3Activity.class);
         intent.putExtra("meni",meni);
         setResult(RESULT_OK,intent);
         finish();

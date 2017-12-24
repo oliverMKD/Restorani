@@ -14,12 +14,15 @@ import butterknife.ButterKnife;
 public class Main5Activity extends AppCompatActivity {
 
     private RestoraniModel restorani;
-    int pozicija = 0;
+
     Menu meni;
     Restorani restorani2;
     @BindView(R.id.pager)
     ViewPager viewPager;
     ViewAdapter adapter;
+    public int menu_pozicija=0;
+    public  int pozicija = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +35,8 @@ public class Main5Activity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.hasExtra("novoextra")){
             restorani2 = (Restorani) intent.getSerializableExtra("novoextra");
-            pozicija = intent.getIntExtra("pozicija",0);
+            pozicija = intent.getIntExtra("pozicija_restoran",0);
+            menu_pozicija = intent.getIntExtra("pozicija",0);
         }
 
         adapter = new ViewAdapter(Main5Activity.this.getSupportFragmentManager());

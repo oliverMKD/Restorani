@@ -43,6 +43,8 @@ public class Main2Activity extends AppCompatActivity {
 
     @OnClick (R.id.kopceSave)
     public void saveDetails(){
+        logo.setText("https://pbs.twimg.com/profile_images/2215476833/homa_logo_400x400.png");
+        rating.setText("5");
         Restorani restoran = new Restorani(logo.getText().toString(),name.getText().toString(),lokacija.getText().toString(),rating.getText().toString());
         restorani.restaurants.add(restoran);
         PreferencesManager.addRestaurants(restorani,Main2Activity.this);

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -36,6 +37,7 @@ public class Main3Activity extends AppCompatActivity {
     Meni meni;
     RestoraniModel restorani2;
     int pozicija = 0;
+    private int addMenu=1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +51,14 @@ public class Main3Activity extends AppCompatActivity {
             restorani = (Restorani)intent.getSerializableExtra("extra");
             pozicija = intent.getIntExtra("pozicija",0);
         }
+        if(restorani.getLogo()!=null && !restorani.getLogo().isEmpty())
         Picasso.with(this).load(restorani.getLogo()).fit().centerInside().into(slika1);
         ime2.setText(restorani.getName());
         grad2.setText(restorani.getCity());
         rating2.setText(restorani.getRating());
+
+
+
 
         adapter =  new RecyclerAdapterMenu(this, new OnRecyclerViewClickListenerMenu() {
             @Override
@@ -61,6 +67,7 @@ public class Main3Activity extends AppCompatActivity {
                 intent = new Intent(Main3Activity.this,Main5Activity.class);
                 intent.putExtra("novoextra",restorani);
                 intent.putExtra("pozicija",position);
+                intent.putExtra("pozicija_restoran",pozicija);
                 startActivityForResult(intent,kluc);
 
             }
@@ -72,29 +79,28 @@ public class Main3Activity extends AppCompatActivity {
         recyclerView1.setAdapter(adapter);
     }
     ArrayList<Meni> getList() {
-        return restorani.menu;
+        if (restorani.menu.isEmpty()) {
+            Toast.makeText(this, "empty menu", Toast.LENGTH_SHORT).show();
+        } else {
+
+        }return restorani.menu;
     }
 
     @OnClick(R.id.kopceZacuvaj)
     public void Vnesi() {
 
         Intent intent = new Intent(this, Main4Activity.class);
+        intent.putExtra("pozicija",pozicija);
         startActivityForResult(intent, kluc);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode==kluc&&resultCode==RESULT_OK);{
-            meni =(Meni)data.getSerializableExtra("meni");
-            restorani.menu.add(meni);
-            restorani2.restaurants.remove(pozicija);
-            restorani2.restaurants.add(pozicija,restorani);
-            PreferencesManager.addRestaurants(restorani2,this);
-
-
+        if (requestCode==kluc&&resultCode==RESULT_OK){
+            restorani2 = PreferencesManager.getRestaurants(this);
+            restorani = restorani2.restaurants.get(pozicija);
+            adapter.setItems(getList());
             adapter.notifyDataSetChanged();
-
-
         }
     }
 }

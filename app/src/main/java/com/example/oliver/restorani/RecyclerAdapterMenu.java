@@ -70,6 +70,8 @@ public class RecyclerAdapterMenu extends RecyclerView.Adapter <RecyclerAdapterMe
 
     @Override
     public int getItemCount() {
+        if(menu == null)
+            return  0;
         return menu.size();
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
