@@ -14,12 +14,12 @@ public class Main4Activity extends AppCompatActivity {
 
     @BindView(R.id.editIme)
     EditText ime;
-    @BindView(R.id.editLink)
-    EditText link;
+//    @BindView(R.id.editLink)
+//    EditText link;
     @BindView(R.id.editCena)
     EditText cena;
-    @BindView(R.id.editVeg)
-    EditText veg;
+//    @BindView(R.id.editVeg)
+//    EditText veg;
     @BindView(R.id.kopceZacuvaj)
     Button kopceZacuvaj;
 

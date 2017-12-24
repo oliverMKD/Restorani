@@ -72,5 +72,6 @@
         android:layout_height="70dp"
         android:layout_below="@+id/editText3"
         android:background="@drawable/floppy"
+        android:text="SAVE"
         android:layout_marginTop="20dp"/>
 </RelativeLayout>

@@ -53,8 +53,8 @@ public class RecyclerAdapterMenu extends RecyclerView.Adapter <RecyclerAdapterMe
     public void onBindViewHolder(RecyclerAdapterMenu.ViewHolder holder,final int position) {
         final Meni meni = menu.get(position);
         holder.textView.setText(meni.link);
-        holder.textView2.setText(meni.price);
-        holder.textView3.setText(meni.foodname);
+        holder.textView2.setText("proce : " +meni.price);
+        holder.textView3.setText("foodname :"+meni.foodname);
 
 
         Picasso.with(context).load(meni.link).fit().centerInside().into(holder.slika);

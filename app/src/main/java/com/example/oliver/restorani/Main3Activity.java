@@ -53,9 +53,9 @@ public class Main3Activity extends AppCompatActivity {
         }
         if(restorani.getLogo()!=null && !restorani.getLogo().isEmpty())
         Picasso.with(this).load(restorani.getLogo()).fit().centerInside().into(slika1);
-        ime2.setText(restorani.getName());
-        grad2.setText(restorani.getCity());
-        rating2.setText(restorani.getRating());
+        ime2.setText("Name :" + restorani.getName());
+        grad2.setText("City :" + restorani.getCity());
+        rating2.setText("Rating" +restorani.getRating());
 
 
 
@@ -79,7 +79,7 @@ public class Main3Activity extends AppCompatActivity {
         recyclerView1.setAdapter(adapter);
     }
     ArrayList<Meni> getList() {
-        if (restorani.menu.isEmpty()) {
+        if (restorani.menu !=null && restorani.menu.isEmpty()) {
             Toast.makeText(this, "empty menu", Toast.LENGTH_SHORT).show();
         } else {
 
