@@ -54,9 +54,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(RecyclerAdapter.ViewHolder holder, final int position) {
         final Restorani restorani = restoraniArrayList.get(position);
-        holder.textView.setText(restorani.name);
-        holder.textView2.setText(restorani.city);
-        holder.textView3.setText(restorani.rating);
+        holder.textView.setText("Name :" + restorani.name);
+        holder.textView2.setText("City :" + restorani.city);
+        holder.textView3.setText("Rating :" + restorani.rating);
 
         Picasso.with(context).load(restorani.logo).fit().centerInside().into(holder.slika);
 
