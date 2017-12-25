@@ -7,39 +7,55 @@
     android:layout_height="match_parent"
     tools:context="com.example.oliver.restorani.Main4Activity">
 
-    <!--<EditText-->
-    <!--android:id="@+id/editLink"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:hint="link"/>-->
+    <EditText
+    android:id="@+id/editLink"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:hint="link"
+        />
 
     <EditText
         android:id="@+id/editCena"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/shadow_lighter_color"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/editLink"
         android:hint="cena"/>
     <EditText
         android:id="@+id/editIme"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@+id/editCena"
-        android:layout_marginTop="20dp"
         android:background="@color/shadow_lighter_color"
         android:hint="naziv"/>
 
-    <!--<EditText-->
-        <!--android:id="@+id/editVeg"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/editIme"-->
-        <!--android:hint="veg"/>-->
+    <EditText
+        android:id="@+id/editVeg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editIme"
+        android:hint="veg"/>
+    <ImageView
+        android:id="@+id/slikagalerija"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/editVeg"/>
     <Button
         android:id="@+id/kopceZacuvaj"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/floppy"
         android:hint="save"/>
+    <Button
+        android:id="@+id/opengallery"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/instagramicon">
+
+    </Button>
 </RelativeLayout>

@@ -13,7 +13,7 @@ public class Meni implements Serializable {
     String foodname;
     boolean isveg;
 
-    public Meni( String price, String foodname) {
+    public Meni( String price, String foodname,String link) {
         this.link = link;
         this.price = price;
         this.foodname = foodname;

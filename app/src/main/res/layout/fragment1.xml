@@ -18,9 +18,16 @@
         android:layout_below="@+id/naziv"
         android:background="@color/shadow_lighter_color"
         android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/link"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/cena"
+        android:background="@color/shadow_lighter_color"
+        android:layout_marginTop="20dp"/>
 
     <ImageView
-        android:layout_below="@+id/cena"
+        android:layout_below="@+id/link"
         android:id="@+id/slikaslika"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,8 +35,8 @@
 
     <Button
         android:id="@+id/kopceEdit"
-        android:layout_width="100dp"
-        android:layout_height="143dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/editbutton" />

@@ -40,6 +40,8 @@ public class Fragment1 extends Fragment {
     EditText cena;
     @BindView(R.id.kopceEdit)
     Button edit;
+    @BindView(R.id.link)
+            EditText link;
     Meni meni;
     int kluc = 1000;
     private RestoraniModel restorani;
@@ -51,6 +53,8 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1,null);
         mUnbinder = ButterKnife.bind(this, view);
+        String logo="https://pbs.twimg.com/profile_images/2215476833/homa_logo_400x400.png";
+        link.setText(logo);
         ime = getArguments().getString("ime");
         cena1 = getArguments().getString("cena");
         urlImage = getArguments().getString("imageUrl");
@@ -70,7 +74,7 @@ public class Fragment1 extends Fragment {
     }
     @OnClick(R.id.kopceEdit)
     public void saveMeni(){
-        meni = new Meni(naziv.getText().toString(),cena.getText().toString());
+        meni = new Meni(naziv.getText().toString(),cena.getText().toString(),link.getText().toString());
 
         restorani.restaurants.get(pozicija).menu.set(menu_pozicija,meni);
         PreferencesManager.addRestaurants(restorani,getActivity());
