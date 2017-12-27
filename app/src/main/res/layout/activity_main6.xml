@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/osnovna1"
+    tools:context="com.example.oliver.restorani.Main6Activity">
+
+    <EditText
+        android:id="@+id/editNaziv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:background="@color/shadow_lighter_color"/>
+
+    <EditText
+        android:id="@+id/editGrad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:layout_below="@+id/editNaziv"
+        android:background="@color/shadow_lighter_color"
+        />
+    <EditText
+        android:id="@+id/editRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rating"
+        android:layout_below="@+id/editGrad"
+        android:background="@color/shadow_lighter_color"/>
+
+    <Button
+        android:id="@+id/kopceEdit1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editRating"
+        android:background="@drawable/editbutton"/>
+
+</RelativeLayout>

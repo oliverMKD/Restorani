@@ -63,7 +63,14 @@
         android:id="@+id/kopceZacuvaj"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@drawable/new1"/>
+        android:background="@drawable/new1"
+        android:text="NEW"/>
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/floppy"
+        android:text="EDIT"
+        android:id="@+id/buttonEdit1"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView1"

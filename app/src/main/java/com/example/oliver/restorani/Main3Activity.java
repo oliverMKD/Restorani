@@ -33,11 +33,14 @@ public class Main3Activity extends AppCompatActivity {
     RecyclerAdapterMenu adapter;
     @BindView(R.id.kopceZacuvaj)
     Button kopce;
+    @BindView(R.id.buttonEdit1)
+    Button kopceEdit;
     int kluc = 1000;
     Meni meni;
     RestoraniModel restorani2;
     int pozicija = 0;
     private int addMenu=1001;
+    int kluc1 = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +96,13 @@ public class Main3Activity extends AppCompatActivity {
         intent.putExtra("pozicija",pozicija);
         startActivityForResult(intent, kluc);
     }
+    @OnClick(R.id.buttonEdit1)
+    public void Edit2() {
+
+        Intent intent1 = new Intent(this, Main6Activity.class);
+        intent1.putExtra("pozicija1",pozicija);
+        startActivityForResult(intent1, kluc1);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -103,4 +113,5 @@ public class Main3Activity extends AppCompatActivity {
             adapter.notifyDataSetChanged();
         }
     }
+
 }
