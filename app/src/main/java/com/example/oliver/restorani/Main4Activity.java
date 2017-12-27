@@ -20,7 +20,7 @@ public class Main4Activity extends AppCompatActivity {
     @BindView(R.id.editIme)
     EditText ime;
     @BindView(R.id.editLink)
-    EditText link;
+    ImageView link;
     @BindView(R.id.editCena)
     EditText cena;
     @BindView(R.id.editVeg)
@@ -44,15 +44,16 @@ public class Main4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         ButterKnife.bind(this);
-        String logo="https://pbs.twimg.com/profile_images/2215476833/homa_logo_400x400.png";
-        link.setText(logo);
+//        String logo="https://pbs.twimg.com/profile_images/2215476833/homa_logo_400x400.png";
+//        slika = pickedImage.toString();
+//        link.setText(slika);
         pozicija = getIntent().getIntExtra("pozicija",0);
         restorani = PreferencesManager.getRestaurants(this);
     }
 
     @OnClick(R.id.kopceZacuvaj)
     public void saveDetails(){
-        Meni meni = new Meni(cena.getText().toString(),ime.getText().toString(),link.getText().toString());
+        Meni meni = new Meni(cena.getText().toString(),ime.getText().toString(),slika);
         restorani.restaurants.get(pozicija).menu.add(meni);
         PreferencesManager.addRestaurants(restorani,this);
         Intent intent = new Intent(this,Main3Activity.class);
@@ -77,7 +78,7 @@ public class Main4Activity extends AppCompatActivity {
             pickedImage = data.getData();
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
             slika = pickedImage.toString();
-            Picasso.with(this).load(pickedImage).centerInside().fit().into(slikagalerija);
+            Picasso.with(this).load(slika).centerInside().fit().into(slikagalerija);
 
 
 

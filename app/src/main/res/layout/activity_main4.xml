@@ -5,12 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/osnovna1"
     tools:context="com.example.oliver.restorani.Main4Activity">
 
-    <EditText
+    <ImageView
     android:id="@+id/editLink"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="150dp"
     android:hint="link"
         />
 
@@ -38,7 +39,7 @@
     <ImageView
         android:id="@+id/slikagalerija"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         android:layout_below="@+id/editVeg"/>
     <Button
         android:id="@+id/kopceZacuvaj"

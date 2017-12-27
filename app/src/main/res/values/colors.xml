@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="shadow_lighter_color">#64000000</color>
+    <color name="osnovna">#90CAF9</color>
+    <color name="osnovna1">#42A5F5</color>
 </resources>

@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.oliver.restorani.MainActivity">
+    tools:context="com.example.oliver.restorani.MainActivity"
+    android:background="@color/osnovna">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
@@ -19,4 +20,5 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:background="@drawable/newicon"/>
+
 </RelativeLayout>
